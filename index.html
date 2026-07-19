@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ===================================================== -->
+    <!-- CONFIGURAÇÕES BÁSICAS                                 -->
+    <!-- ===================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="My Personal Corner - Sua biblioteca digital pessoal.">
+
+    <meta
+        name="theme-color"
+        content="#2E4A3F">
+
+    <title>My Personal Corner</title>
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- FAVICON                                               -->
+    <!-- ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/icons/favicon.png">
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- GOOGLE FONTS                                          -->
+    <!-- ===================================================== -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- LUCIDE ICONS                                          -->
+    <!-- ===================================================== -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- PWA                                                   -->
+    <!-- ===================================================== -->
+
+    <link
+        rel="manifest"
+        href="manifest.json">
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- CSS                                                   -->
+    <!-- ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- TELA DE BOAS-VINDAS                                   -->
+    <!-- ===================================================== -->
+
+    <section
+        id="welcomeScreen"
+        class="welcome-screen">
+
+        <div class="welcome-card">
+
+            <div class="welcome-logo">
+
+                📚
+
+            </div>
+
+            <h1>
+
+                My Personal Corner
+
+            </h1>
+
+            <p>
+
+                Seu cantinho literário particular.
+
+            </p>
+
+
+
+
+
+            <!-- Nome -->
+
+            <div class="input-group">
+
+                <label for="userName">
+
+                    Como você gostaria de ser chamada?
+
+                </label>
+
+                <input
+                    type="text"
+                    id="userName"
+                    placeholder="Digite seu nome">
+
+            </div>
+
+
+
+
+
+            <!-- Foto -->
+
+            <div class="input-group">
+
+                <label for="userPhoto">
+
+                    Foto de perfil (opcional)
+
+                </label>
+
+                <input
+                    type="file"
+                    id="userPhoto"
+                    accept="image/*">
+
+            </div>
+
+
+
+
+
+            <button
+                id="startButton">
+
+                Entrar
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- APLICAÇÃO                                             -->
+    <!-- ===================================================== -->
+
+    <main
+        id="app"
+        class="hidden">
+
+        <!-- ================================================= -->
+        <!-- CABEÇALHO                                         -->
+        <!-- ================================================= -->
+
+        <header class="topbar">
+
+            <div class="logo-area">
+
+                <h1>
+
+                    📚 My Personal Corner
+
+                </h1>
+
+            </div>
+
+
+
+
+
+            <nav class="navigation">
+
+                <button
+                    class="nav-button active">
+
+                    Biblioteca
+
+                </button>
+
+                <button
+                    class="nav-button">
+
+                    Estatísticas
+
+                </button>
+
+                <button
+                    class="nav-button">
+
+                    Metas
+
+                </button>
+
+                <button
+                    class="nav-button">
+
+                    Configurações
+
+                </button>
+
+            </nav>
+
+
+
+
+
+            <div class="profile-area">
+
+                <button
+                    id="themeButton">
+
+                    🌙
+
+                </button>
+
+                <img
+                    id="profilePreview"
+                    src=""
+                    alt="Foto do perfil">
+
+            </div>
+
+        </header>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- HERO                                               -->
+        <!-- ================================================= -->
+
+        <section class="hero">
+
+            <div>
+
+                <h2 id="greeting">
+
+                    Boa noite.
+
+                </h2>
+
+                <p>
+
+                    Bem-vinda ao seu cantinho literário.
+
+                </p>
+
+            </div>
+
+        </section>
+                <!-- ================================================= -->
+        <!-- CONTINUE SUA LEITURA                              -->
+        <!-- ================================================= -->
+
+        <section class="continue-reading">
+
+            <div class="continue-card">
+
+                <div class="continue-info">
+
+                    <h3>
+
+                        Continue sua leitura
+
+                    </h3>
+
+                    <p id="continueMessage">
+
+                        Você ainda não possui nenhuma leitura em andamento.
+
+                    </p>
+
+                </div>
+
+                <div class="continue-progress">
+
+                    <div class="progress-bar">
+
+                        <div
+                            id="continueProgress"
+                            class="progress-fill">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- DASHBOARD                                         -->
+        <!-- ================================================= -->
+
+        <section class="dashboard">
+
+            <article class="dashboard-card">
+
+                <span>📚</span>
+
+                <h3 id="totalBooks">
+
+                    0
+
+                </h3>
+
+                <p>Total de Livros</p>
+
+            </article>
+
+            <article class="dashboard-card">
+
+                <span>📖</span>
+
+                <h3 id="readingBooks">
+
+                    0
+
+                </h3>
+
+                <p>Lendo</p>
+
+            </article>
+
+            <article class="dashboard-card">
+
+                <span>✅</span>
+
+                <h3 id="finishedBooks">
+
+                    0
+
+                </h3>
+
+                <p>Lidos</p>
+
+            </article>
+
+            <article class="dashboard-card">
+
+                <span>❤️</span>
+
+                <h3 id="favoriteBooks">
+
+                    0
+
+                </h3>
+
+                <p>Favoritos</p>
+
+            </article>
+
+            <article class="dashboard-card">
+
+                <span>🎯</span>
+
+                <h3 id="goalProgress">
+
+                    0%
+
+                </h3>
+
+                <p>Meta</p>
+
+            </article>
+
+        </section>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- PESQUISA                                          -->
+        <!-- ================================================= -->
+
+        <section class="search-area">
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="Pesquisar por título, autor, ISBN ou gênero...">
+
+            <button id="addBookButton">
+
+                + Adicionar Livro
+
+            </button>
+
+        </section>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- ESTANTE                                           -->
+        <!-- ================================================= -->
+
+        <section
+            id="bookShelf"
+            class="book-shelf">
+
+        </section>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- MODAL                                             -->
+        <!-- ================================================= -->
+
+        <div
+            id="bookModal"
+            class="modal hidden">
+
+            <div class="modal-content">
+
+                <button
+                    id="closeModal"
+                    class="close-button">
+
+                    ✕
+
+                </button>
+
+                <h2>
+
+                    Adicionar Livro
+
+                </h2>
+
+                <form id="bookForm">
+
+                    <input
+                        id="bookTitle"
+                        type="text"
+                        placeholder="Título"
+                        required>
+
+                    <input
+                        id="bookAuthor"
+                        type="text"
+                        placeholder="Autor"
+                        required>
+
+                    <input
+                        id="bookISBN"
+                        type="text"
+                        placeholder="ISBN">
+
+                    <button
+                        id="searchISBNButton"
+                        type="button">
+
+                        Buscar ISBN
+
+                    </button>
+
+                    <input
+                        id="bookPublisher"
+                        type="text"
+                        placeholder="Editora">
+
+                    <input
+                        id="bookGenre"
+                        type="text"
+                        placeholder="Gênero">
+
+                    <input
+                        id="bookPages"
+                        type="number"
+                        placeholder="Número de páginas">
+
+                    <input
+                        id="bookYear"
+                        type="number"
+                        placeholder="Ano">
+
+                    <textarea
+                        id="bookDescription"
+                        placeholder="Sinopse"></textarea>
+
+                    <input
+                        id="bookCover"
+                        type="file"
+                        accept="image/*">
+
+                    <select id="bookStatus">
+
+                        <option value="lendo">📖 Lendo</option>
+
+                        <option value="lido">✅ Lido</option>
+
+                        <option value="relendo">🔄 Relendo</option>
+
+                        <option value="abandonado">❌ Abandonado</option>
+
+                    </select>
+
+                    <input
+                        id="bookCurrentPage"
+                        type="number"
+                        placeholder="Página atual">
+
+                    <input
+                        id="bookStartDate"
+                        type="date">
+
+                    <input
+                        id="bookEndDate"
+                        type="date">
+
+                    <select id="bookRating">
+
+                        <option value="0">Sem avaliação</option>
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+
+                    </select>
+
+                    <label>
+
+                        <input
+                            id="tagFavorite"
+                            type="checkbox">
+
+                        ❤️ Favorito
+
+                    </label>
+
+                    <label>
+
+                        <input
+                            id="tagOverrated"
+                            type="checkbox">
+
+                        📈 Superestimado
+
+                    </label>
+
+                    <label>
+
+                        <input
+                            id="tagNever"
+                            type="checkbox">
+
+                        🚫 Nunca mais ler
+
+                    </label>
+
+                    <textarea
+                        id="bookReview"
+                        rows="8"
+                        placeholder="Escreva sua resenha..."></textarea>
+
+                    <button
+                        id="saveBookButton"
+                        type="submit">
+
+                        Salvar Livro
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- PÁGINA DO LIVRO                                   -->
+        <!-- ================================================= -->
+
+        <section
+            id="bookDetails"
+            class="hidden">
+
+        </section>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- NOTIFICAÇÕES                                      -->
+        <!-- ================================================= -->
+
+        <div
+            id="toast"
+            class="toast">
+
+        </div>
+
+
+
+
+
+        <!-- ================================================= -->
+        <!-- RODAPÉ                                            -->
+        <!-- ================================================= -->
+
+        <footer>
+
+            <p>
+
+                My Personal Corner © 2026
+
+            </p>
+
+        </footer>
+
+    </main>
+
+
+
+
+
+    <!-- ===================================================== -->
+    <!-- JAVASCRIPT                                           -->
+    <!-- ===================================================== -->
+
+    <script src="script.js"></script>
+
+    <script>
+
+        lucide.createIcons();
+
+    </script>
+
+</body>
+
+</html>
