@@ -1,0 +1,3324 @@
+/* ====================================================== */
+/* MY PERSONAL CORNER v2                                  */
+/* STYLE.CSS                                              */
+/* ====================================================== */
+
+
+
+
+
+/* ====================================================== */
+/* RESET                                                  */
+/* ====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* VARIÁVEIS                                              */
+/* ====================================================== */
+
+:root{
+
+    /* Cores */
+
+    --background:#F8F5F0;
+
+    --surface:#FFFFFF;
+
+    --primary:#2E4A3F;
+
+    --primary-light:#456658;
+
+    --secondary:#B08D57;
+
+    --text:#2B2B2B;
+
+    --text-light:#6B6B6B;
+
+    --border:#E5DED2;
+
+    --success:#5C8D5A;
+
+    --danger:#B84A4A;
+
+    --warning:#D4A017;
+
+
+
+
+
+    /* Sombras */
+
+    --shadow-sm:0 4px 12px rgba(0,0,0,.05);
+
+    --shadow-md:0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-lg:0 20px 50px rgba(0,0,0,.10);
+
+
+
+
+
+    /* Bordas */
+
+    --radius-sm:10px;
+
+    --radius-md:18px;
+
+    --radius-lg:28px;
+
+
+
+
+
+    /* Transições */
+
+    --transition:.30s ease;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BODY                                                   */
+/* ====================================================== */
+
+body{
+
+    background:var(--background);
+
+    color:var(--text);
+
+    font-family:"Poppins",sans-serif;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* TIPOGRAFIA                                             */
+/* ====================================================== */
+
+h1,
+h2,
+h3,
+h4{
+
+    font-family:"Playfair Display",serif;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+p{
+
+    color:var(--text-light);
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    transition:var(--transition);
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-sm);
+
+    background:var(--surface);
+
+    font-size:15px;
+
+    font-family:"Poppins",sans-serif;
+
+    outline:none;
+
+    transition:var(--transition);
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(46,74,63,.12);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CLASSES GERAIS                                         */
+/* ====================================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.container{
+
+    width:min(1400px,92%);
+
+    margin:auto;
+
+}
+
+.section{
+
+    margin-top:40px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BARRA DE ROLAGEM                                       */
+/* ====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EFE8DD;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-light);
+
+}
+/* ====================================================== */
+/* TELA DE BOAS-VINDAS                                    */
+/* ====================================================== */
+
+.welcome-screen{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #F8F5F0,
+        #EFE8DD
+    );
+
+}
+
+.welcome-card{
+
+    width:min(500px,100%);
+
+    background:var(--surface);
+
+    border-radius:var(--radius-lg);
+
+    padding:40px;
+
+    box-shadow:var(--shadow-lg);
+
+    text-align:center;
+
+    animation:fadeUp .7s ease;
+
+}
+
+.welcome-logo{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+}
+
+.welcome-card h1{
+
+    margin-bottom:10px;
+
+}
+
+.welcome-card p{
+
+    margin-bottom:30px;
+
+}
+
+.input-group{
+
+    margin-bottom:20px;
+
+    text-align:left;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+#startButton{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:16px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:var(--radius-sm);
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+#startButton:hover{
+
+    background:var(--primary-light);
+
+    transform:translateY(-2px);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CABEÇALHO                                              */
+/* ====================================================== */
+
+.topbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 6%;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo-area h1{
+
+    font-size:28px;
+
+}
+
+.navigation{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.nav-button{
+
+    background:transparent;
+
+    color:var(--text);
+
+    padding:12px 18px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+}
+
+.nav-button:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.nav-button.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.profile-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+#themeButton{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:var(--background);
+
+    font-size:18px;
+
+}
+
+#themeButton:hover{
+
+    transform:rotate(15deg);
+
+}
+
+#profilePreview{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    background:#DDD;
+
+    border:3px solid var(--primary);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* HERO                                                   */
+/* ====================================================== */
+
+.hero{
+
+    width:min(1400px,92%);
+
+    margin:40px auto;
+
+    padding:45px;
+
+    border-radius:var(--radius-lg);
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-light)
+    );
+
+    color:white;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.hero h2{
+
+    color:white;
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.hero p{
+
+    color:#F5F5F5;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* ANIMAÇÕES                                              */
+/* ====================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ====================================================== */
+/* CONTINUE SUA LEITURA                                   */
+/* ====================================================== */
+
+.continue-reading{
+
+    width:min(1400px,92%);
+
+    margin:30px auto;
+
+}
+
+.continue-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #F8F5F0
+    );
+
+    padding:30px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+    border:1px solid var(--border);
+
+}
+
+.continue-info{
+
+    flex:1;
+
+}
+
+.continue-info h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.continue-info p{
+
+    font-size:16px;
+
+}
+
+.continue-progress{
+
+    width:320px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:18px;
+
+    background:#E7E0D5;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition:width .6s ease;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* DASHBOARD                                              */
+/* ====================================================== */
+
+.dashboard{
+
+    width:min(1400px,92%);
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.dashboard-card{
+
+    background:white;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow-sm);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.dashboard-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:6px;
+
+    height:100%;
+
+    background:var(--primary);
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.dashboard-card span{
+
+    font-size:34px;
+
+    display:block;
+
+    margin-bottom:15px;
+
+}
+
+.dashboard-card h3{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.dashboard-card p{
+
+    font-size:15px;
+
+    color:var(--text-light);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CORES DOS CARDS                                        */
+/* ====================================================== */
+
+.dashboard-card:nth-child(2)::before{
+
+    background:#4E8C68;
+
+}
+
+.dashboard-card:nth-child(3)::before{
+
+    background:#6E9C47;
+
+}
+
+.dashboard-card:nth-child(4)::before{
+
+    background:#C58A22;
+
+}
+
+.dashboard-card:nth-child(5)::before{
+
+    background:#A85D32;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* EFEITO AO PASSAR O MOUSE                               */
+/* ====================================================== */
+
+.dashboard-card:hover span{
+
+    transform:scale(1.12);
+
+    transition:.3s;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* ANIMAÇÃO DE ENTRADA                                    */
+/* ====================================================== */
+
+.dashboard-card{
+
+    animation:fadeUp .6s ease;
+
+}
+
+.continue-card{
+
+    animation:fadeUp .7s ease;
+
+}
+/* ====================================================== */
+/* PESQUISA                                               */
+/* ====================================================== */
+
+.search-area{
+
+    width:min(1400px,92%);
+
+    margin:40px auto;
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+
+}
+
+#searchInput{
+
+    flex:1;
+
+    padding:18px 22px;
+
+    font-size:16px;
+
+    background:white;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+#searchInput::placeholder{
+
+    color:#9A9A9A;
+
+}
+
+#addBookButton{
+
+    padding:18px 28px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+#addBookButton:hover{
+
+    background:var(--primary-light);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* ESTANTE                                                */
+/* ====================================================== */
+
+.book-shelf{
+
+    width:min(1400px,92%);
+
+    margin:40px auto 80px;
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fill,minmax(240px,1fr));
+
+    gap:28px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CARD DO LIVRO                                          */
+/* ====================================================== */
+
+.book-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+    animation:fadeUp .5s ease;
+
+}
+
+.book-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CAPA                                                   */
+/* ====================================================== */
+
+.book-cover{
+
+    width:100%;
+
+    aspect-ratio:2/3;
+
+    background:#ECE6DB;
+
+    overflow:hidden;
+
+}
+
+.book-cover img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CONTEÚDO                                               */
+/* ====================================================== */
+
+.book-content{
+
+    padding:20px;
+
+}
+
+.book-title{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:22px;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+    line-height:1.3;
+
+}
+
+.book-author{
+
+    font-size:15px;
+
+    color:var(--text-light);
+
+    margin-bottom:18px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* STATUS                                                 */
+/* ====================================================== */
+
+.book-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.status-reading{
+
+    background:#DFF3E5;
+
+    color:#2E7D32;
+
+}
+
+.status-finished{
+
+    background:#E3F2FD;
+
+    color:#1565C0;
+
+}
+
+.status-rereading{
+
+    background:#FFF3E0;
+
+    color:#EF6C00;
+
+}
+
+.status-abandoned{
+
+    background:#FCE4EC;
+
+    color:#AD1457;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* PROGRESSO                                              */
+/* ====================================================== */
+
+.book-progress{
+
+    margin-top:18px;
+
+}
+
+.book-progress span{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+}
+
+.book-progress-bar{
+
+    width:100%;
+
+    height:10px;
+
+    background:#E8E1D7;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.book-progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        var(--secondary)
+
+    );
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* RODAPÉ DO CARD                                         */
+/* ====================================================== */
+
+.book-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:20px;
+
+}
+
+.book-rating{
+
+    color:#E8B400;
+
+    font-size:18px;
+
+}
+
+.book-tags{
+
+    display:flex;
+
+    gap:6px;
+
+    flex-wrap:wrap;
+
+}
+
+.tag{
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    background:#F3EFE7;
+
+    font-size:12px;
+
+}
+/* ====================================================== */
+/* MODAL                                                  */
+/* ====================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(6px);
+
+    padding:40px;
+
+    z-index:999;
+
+}
+
+.modal.hidden{
+
+    display:none;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CONTEÚDO DO MODAL                                      */
+/* ====================================================== */
+
+.modal-content{
+
+    width:min(900px,100%);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:var(--surface);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow-lg);
+
+    animation:fadeUp .35s ease;
+
+    position:relative;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BOTÃO FECHAR                                           */
+/* ====================================================== */
+
+.close-button{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#EFE8DD;
+
+    color:var(--primary);
+
+    font-size:20px;
+
+}
+
+.close-button:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:rotate(90deg);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* TÍTULOS                                                */
+/* ====================================================== */
+
+.modal-content h2{
+
+    margin-bottom:25px;
+
+    font-size:34px;
+
+}
+
+.modal-content h3{
+
+    margin-top:30px;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+    color:var(--primary);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* FORMULÁRIO                                             */
+/* ====================================================== */
+
+#bookForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+#bookForm hr{
+
+    border:none;
+
+    height:1px;
+
+    background:var(--border);
+
+    margin:10px 0;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* FILE INPUT                                             */
+/* ====================================================== */
+
+input[type="file"]{
+
+    padding:12px;
+
+    background:#F7F4EF;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CHECKBOX                                               */
+/* ====================================================== */
+
+#bookForm label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:500;
+
+    color:var(--text);
+
+}
+
+#bookForm input[type="checkbox"]{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* TEXTAREA                                               */
+/* ====================================================== */
+
+textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BOTÕES                                                 */
+/* ====================================================== */
+
+#searchISBNButton{
+
+    background:#EFE8DD;
+
+    color:var(--primary);
+
+    padding:14px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+}
+
+#searchISBNButton:hover{
+
+    background:var(--secondary);
+
+    color:white;
+
+}
+
+#saveBookButton{
+
+    margin-top:20px;
+
+    padding:18px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:18px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+#saveBookButton:hover{
+
+    background:var(--primary-light);
+
+    transform:translateY(-2px);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* SCROLLBAR DO MODAL                                     */
+/* ====================================================== */
+
+.modal-content::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.modal-content::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* RESPONSIVIDADE DO MODAL                                */
+/* ====================================================== */
+
+@media(max-width:768px){
+
+    .modal{
+
+        padding:15px;
+
+    }
+
+    .modal-content{
+
+        padding:22px;
+
+        border-radius:20px;
+
+    }
+
+    .modal-content h2{
+
+        font-size:28px;
+
+    }
+
+}
+/* ====================================================== */
+/* ABAS DO FORMULÁRIO                                     */
+/* ====================================================== */
+
+.form-tabs{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.form-tab{
+
+    padding:14px 22px;
+
+    border-radius:50px;
+
+    background:#F3EFE7;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    user-select:none;
+
+}
+
+.form-tab:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.form-tab.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CONTEÚDO DAS ABAS                                      */
+/* ====================================================== */
+
+.tab-content{
+
+    display:none;
+
+    animation:fadeUp .35s ease;
+
+}
+
+.tab-content.active{
+
+    display:block;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* GRID DO FORMULÁRIO                                     */
+/* ====================================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.form-grid .full{
+
+    grid-column:1/-1;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BOTÕES DE NAVEGAÇÃO                                    */
+/* ====================================================== */
+
+.form-navigation{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+}
+
+.previous-tab,
+
+.next-tab{
+
+    padding:15px 28px;
+
+    border-radius:16px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.previous-tab{
+
+    background:#EFE8DD;
+
+    color:var(--primary);
+
+}
+
+.previous-tab:hover{
+
+    background:#DDD4C6;
+
+}
+
+.next-tab{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.next-tab:hover{
+
+    background:var(--primary-light);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* ETIQUETAS                                              */
+/* ====================================================== */
+
+.checkbox-group{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.checkbox-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 18px;
+
+    background:#F8F5F0;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+.checkbox-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* AVALIAÇÃO                                              */
+/* ====================================================== */
+
+.rating-select{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.rating-star{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    background:#EFE8DD;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:22px;
+
+}
+
+.rating-star:hover{
+
+    background:var(--warning);
+
+    color:white;
+
+    transform:scale(1.1);
+
+}
+
+.rating-star.active{
+
+    background:#F4B400;
+
+    color:white;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BARRA SUPERIOR                                         */
+/* ====================================================== */
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* RESPONSIVIDADE                                         */
+/* ====================================================== */
+
+@media(max-width:800px){
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .form-navigation{
+
+        flex-direction:column;
+
+    }
+
+    .next-tab,
+
+    .previous-tab{
+
+        width:100%;
+
+    }
+
+}
+/* ====================================================== */
+/* DRAWER DO LIVRO                                        */
+/* ====================================================== */
+
+.book-details{
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:min(900px,100%);
+
+    height:100vh;
+
+    background:var(--surface);
+
+    box-shadow:-15px 0 50px rgba(0,0,0,.15);
+
+    transition:.45s ease;
+
+    z-index:1500;
+
+    overflow-y:auto;
+
+}
+
+.book-details.active{
+
+    right:0;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CABEÇALHO                                              */
+/* ====================================================== */
+
+.details-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px;
+
+    border-bottom:1px solid var(--border);
+
+    position:sticky;
+
+    top:0;
+
+    background:white;
+
+    z-index:10;
+
+}
+
+.details-header h2{
+
+    margin:0;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BOTÃO FECHAR                                           */
+/* ====================================================== */
+
+.close-details{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#EFE8DD;
+
+    font-size:22px;
+
+}
+
+.close-details:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CONTEÚDO                                               */
+/* ====================================================== */
+
+.details-content{
+
+    padding:35px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* TOPO                                                   */
+/* ====================================================== */
+
+.details-top{
+
+    display:grid;
+
+    grid-template-columns:280px 1fr;
+
+    gap:40px;
+
+}
+
+
+
+
+
+.details-cover{
+
+    width:100%;
+
+    aspect-ratio:2/3;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#ECE5D9;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.details-cover img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* INFORMAÇÕES                                            */
+/* ====================================================== */
+
+.details-info h1{
+
+    margin-bottom:10px;
+
+}
+
+.details-info p{
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BARRA DE PROGRESSO                                     */
+/* ====================================================== */
+
+.details-progress{
+
+    margin-top:25px;
+
+}
+
+.details-progress-bar{
+
+    height:14px;
+
+    background:#E8E2D7;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.details-progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        var(--secondary)
+
+    );
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* RESENHA                                                */
+/* ====================================================== */
+
+.review-box{
+
+    margin-top:35px;
+
+    background:#F8F5F0;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    border:1px solid var(--border);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* TIMELINE                                               */
+/* ====================================================== */
+
+.timeline{
+
+    margin-top:40px;
+
+}
+
+.timeline-item{
+
+    border-left:4px solid var(--primary);
+
+    padding-left:25px;
+
+    margin-bottom:35px;
+
+    position:relative;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    background:var(--primary);
+
+    border-radius:50%;
+
+    position:absolute;
+
+    left:-11px;
+
+    top:0;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BOTÕES                                                 */
+/* ====================================================== */
+
+.details-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:35px;
+
+}
+
+.edit-book{
+
+    flex:1;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:18px;
+
+}
+
+.delete-book{
+
+    flex:1;
+
+    background:#B84A4A;
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:18px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* RESPONSIVIDADE                                         */
+/* ====================================================== */
+
+@media(max-width:900px){
+
+.details-top{
+
+grid-template-columns:1fr;
+
+}
+
+.details-cover{
+
+max-width:280px;
+
+margin:auto;
+
+}
+
+}
+/* ====================================================== */
+/* PÁGINA DE ESTATÍSTICAS                                 */
+/* ====================================================== */
+
+.statistics{
+
+    width:min(1400px,92%);
+
+    margin:50px auto;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* TÍTULO                                                 */
+/* ====================================================== */
+
+.statistics-header{
+
+    margin-bottom:35px;
+
+}
+
+.statistics-header h2{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+.statistics-header p{
+
+    font-size:17px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* GRID PRINCIPAL                                         */
+/* ====================================================== */
+
+.statistics-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CARDS                                                  */
+/* ====================================================== */
+
+.stats-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow-md);
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CABEÇALHO DO CARD                                      */
+/* ====================================================== */
+
+.stats-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.stats-card-header h3{
+
+    font-size:24px;
+
+}
+
+.stats-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:16px;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* NÚMEROS GRANDES                                        */
+/* ====================================================== */
+
+.big-number{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* LISTAS                                                 */
+/* ====================================================== */
+
+.stats-list{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.stats-list li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-bottom:10px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BARRAS                                                 */
+/* ====================================================== */
+
+.stats-bar{
+
+    margin-top:15px;
+
+}
+
+.stats-bar span{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+}
+
+.stats-bar-bg{
+
+    width:100%;
+
+    height:12px;
+
+    background:#EAE3D8;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.stats-bar-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        var(--secondary)
+
+    );
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* CANVAS DOS GRÁFICOS                                    */
+/* ====================================================== */
+
+.chart-container{
+
+    width:100%;
+
+    height:280px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* META ANUAL                                             */
+/* ====================================================== */
+
+.goal-card{
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        var(--primary-light)
+
+    );
+
+    color:white;
+
+}
+
+.goal-card h3,
+
+.goal-card p{
+
+    color:white;
+
+}
+
+.goal-card .big-number{
+
+    color:white;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* GÊNEROS                                                */
+/* ====================================================== */
+
+.genre-pill{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:#F3EFE7;
+
+    margin:6px;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* AUTORES                                                */
+/* ====================================================== */
+
+.author-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* RESPONSIVO                                             */
+/* ====================================================== */
+
+@media(max-width:900px){
+
+.statistics-header h2{
+
+font-size:30px;
+
+}
+
+.big-number{
+
+font-size:42px;
+
+}
+
+}
+/* ====================================================== */
+/* TOASTS (NOTIFICAÇÕES)                                  */
+/* ====================================================== */
+
+.toast-container{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    z-index:3000;
+
+    pointer-events:none;
+
+}
+
+.toast{
+
+    min-width:320px;
+
+    max-width:420px;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    background:white;
+
+    border-left:6px solid var(--primary);
+
+    box-shadow:var(--shadow-lg);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    animation:toastIn .35s ease;
+
+    pointer-events:auto;
+
+}
+
+.toast-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    color:white;
+
+}
+
+.toast-success .toast-icon{
+
+    background:var(--success);
+
+}
+
+.toast-error .toast-icon{
+
+    background:var(--danger);
+
+}
+
+.toast-warning .toast-icon{
+
+    background:var(--warning);
+
+}
+
+.toast-info .toast-icon{
+
+    background:var(--primary);
+
+}
+
+.toast-text{
+
+    flex:1;
+
+}
+
+.toast-title{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-bottom:4px;
+
+}
+
+.toast-message{
+
+    font-size:14px;
+
+    color:var(--text-light);
+
+}
+
+.toast-close{
+
+    background:none;
+
+    font-size:20px;
+
+    color:var(--text-light);
+
+}
+
+.toast-close:hover{
+
+    color:var(--primary);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* LOADING                                                */
+/* ====================================================== */
+
+.loading-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.7);
+
+    backdrop-filter:blur(5px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:4000;
+
+}
+
+.loading-overlay.hidden{
+
+    display:none;
+
+}
+
+.loading-spinner{
+
+    width:70px;
+
+    height:70px;
+
+    border:6px solid #E8E2D7;
+
+    border-top:6px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* MODAL DE CONFIRMAÇÃO                                   */
+/* ====================================================== */
+
+.confirm-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(5px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:3500;
+
+}
+
+.confirm-overlay.hidden{
+
+    display:none;
+
+}
+
+.confirm-box{
+
+    width:min(420px,95%);
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-lg);
+
+    animation:fadeUp .35s ease;
+
+}
+
+.confirm-box h3{
+
+    margin-bottom:15px;
+
+}
+
+.confirm-box p{
+
+    margin-bottom:25px;
+
+}
+
+.confirm-actions{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.confirm-actions button{
+
+    flex:1;
+
+    padding:14px;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+}
+
+.confirm-cancel{
+
+    background:#EFE8DD;
+
+    color:var(--primary);
+
+}
+
+.confirm-delete{
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* ANIMAÇÕES                                              */
+/* ====================================================== */
+
+@keyframes toastIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/* ====================================================== */
+/* DARK MODE                                              */
+/* ====================================================== */
+
+body.dark-mode{
+
+    --background:#171A1C;
+
+    --surface:#23282D;
+
+    --primary:#8DBA9D;
+
+    --primary-light:#6FA483;
+
+    --secondary:#D6B26C;
+
+    --text:#F4F4F4;
+
+    --text-light:#C5C5C5;
+
+    --border:#353B40;
+
+    --shadow-sm:0 4px 12px rgba(0,0,0,.25);
+
+    --shadow-md:0 10px 25px rgba(0,0,0,.35);
+
+    --shadow-lg:0 20px 45px rgba(0,0,0,.45);
+
+}
+
+body.dark-mode{
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+body.dark-mode p{
+
+    color:var(--text-light);
+
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+
+    background:#2B3035;
+
+    color:var(--text);
+
+    border-color:var(--border);
+
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder{
+
+    color:#AAAAAA;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* COMPONENTES                                            */
+/* ====================================================== */
+
+body.dark-mode .dashboard-card,
+body.dark-mode .book-card,
+body.dark-mode .stats-card,
+body.dark-mode .modal-content,
+body.dark-mode .continue-card,
+body.dark-mode .confirm-box,
+body.dark-mode .review-box{
+
+    background:var(--surface);
+
+    border-color:var(--border);
+
+}
+
+body.dark-mode .topbar{
+
+    background:rgba(35,40,45,.88);
+
+}
+
+body.dark-mode .hero{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #2A4737,
+
+        #20382C
+
+    );
+
+}
+
+body.dark-mode .tag{
+
+    background:#32383D;
+
+}
+
+body.dark-mode .checkbox-card{
+
+    background:#2D3338;
+
+}
+
+body.dark-mode .rating-star{
+
+    background:#32383D;
+
+}
+
+body.dark-mode .toast{
+
+    background:var(--surface);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* SCROLLBAR                                              */
+/* ====================================================== */
+
+body.dark-mode ::-webkit-scrollbar-track{
+
+    background:#23282D;
+
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb{
+
+    background:#6FA483;
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* IMAGENS                                                */
+/* ====================================================== */
+
+.book-cover img,
+.details-cover img{
+
+    transition:.4s;
+
+}
+
+.book-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* BOTÕES                                                 */
+/* ====================================================== */
+
+button{
+
+    transition:
+
+        background .3s,
+
+        transform .3s,
+
+        color .3s,
+
+        box-shadow .3s;
+
+}
+
+button:hover{
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* RESPONSIVIDADE GERAL                                   */
+/* ====================================================== */
+
+@media(max-width:1200px){
+
+.hero h2{
+
+font-size:34px;
+
+}
+
+}
+
+
+
+
+
+@media(max-width:992px){
+
+.topbar{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.navigation{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+padding:35px;
+
+}
+
+.hero h2{
+
+font-size:30px;
+
+}
+
+}
+
+
+
+
+
+@media(max-width:768px){
+
+.search-area{
+
+flex-direction:column;
+
+}
+
+#addBookButton{
+
+width:100%;
+
+}
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.book-shelf{
+
+grid-template-columns:
+
+repeat(auto-fill,minmax(180px,1fr));
+
+}
+
+.continue-card{
+
+flex-direction:column;
+
+}
+
+.continue-progress{
+
+width:100%;
+
+}
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+.hero{
+
+padding:28px;
+
+}
+
+.hero h2{
+
+font-size:26px;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+}
+
+.book-card{
+
+border-radius:18px;
+
+}
+
+.dashboard-card{
+
+padding:22px;
+
+}
+
+.stats-card{
+
+padding:22px;
+
+}
+
+}
+
+
+
+
+
+@media(max-width:450px){
+
+.logo-area h1{
+
+font-size:22px;
+
+}
+
+.navigation{
+
+gap:8px;
+
+}
+
+.nav-button{
+
+padding:10px 12px;
+
+font-size:13px;
+
+}
+
+.book-shelf{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+
+
+/* ====================================================== */
+/* TRANSIÇÃO GLOBAL                                       */
+/* ====================================================== */
+
+body,
+.topbar,
+.hero,
+.dashboard-card,
+.book-card,
+.stats-card,
+.modal-content,
+.continue-card{
+
+    transition:
+
+    background .35s ease,
+
+    color .35s ease,
+
+    border-color .35s ease,
+
+    box-shadow .35s ease;
+
+}
